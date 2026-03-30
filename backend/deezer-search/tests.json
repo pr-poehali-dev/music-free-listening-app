@@ -1,0 +1,26 @@
+{
+  "tests": [
+    {
+      "name": "Chart tracks (no query)",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"type": "chart"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Search by track name",
+      "method": "GET",
+      "path": "/?q=eminem",
+      "expectedStatus": 200,
+      "expectedBody": {"query": "eminem"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}
